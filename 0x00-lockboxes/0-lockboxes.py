@@ -3,6 +3,8 @@
 
 def canUnlockAll(boxes):
     """Unlock check"""
+    if len(boxes) == 1:
+        return True
     allKeys = []
 
     for box in boxes:
