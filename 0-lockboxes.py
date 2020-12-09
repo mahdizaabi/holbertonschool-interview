@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Check boxes"""
 
 def canUnlockAll(boxes):
     """Unlock check"""
