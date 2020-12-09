@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """[Lockboxes]"""
 
+
 def canUnlockAll(boxes):
     """Unlock check"""
     if len(boxes) == 1:
