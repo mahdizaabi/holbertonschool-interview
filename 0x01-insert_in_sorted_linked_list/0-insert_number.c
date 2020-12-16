@@ -29,6 +29,8 @@ listint_t *insert_node(listint_t **head, int number)
 
 	else if ((*head)->n < number)
 	{
+		if ((*head)->next == NULL)
+			add_nodeint_end(head, number);
 		pointer = *head;
 	while (pointer->next != NULL)
 	{
