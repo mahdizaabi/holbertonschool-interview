@@ -10,8 +10,7 @@
  */
 listint_t *insert_node(listint_t **head, int number)
 {
-	if (head == NULL)
-		return (NULL);
+	
 
 	listint_t *pointer = NULL;
 	listint_t *newnode = NULL;
