@@ -20,8 +20,8 @@ int main(void)
     print_listint(head);
 
     printf("-----------------\n");
-
-    insert_node(&head, 14);
+    insert_node(&head, 0);
+    insert_node(&head, 9);
     insert_node(&head, 18);
     print_listint(head);
 
