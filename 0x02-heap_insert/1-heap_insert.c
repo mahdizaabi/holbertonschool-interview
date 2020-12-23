@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include "binary_trees.h"
 
-
 /**
  * swapNode - swap Node.
  * @myNode: pointer to the first node of the list
@@ -86,7 +85,6 @@ heap_t *heap_insert(heap_t **root, int value)
 		*root = binary_tree_node(*root, value);
 		return (*root);
 	}
-
 	parentNode = testx(root);
 	newNode = binary_tree_node(parentNode, value);
 	if (!parentNode->left)
@@ -95,10 +93,7 @@ heap_t *heap_insert(heap_t **root, int value)
 		parentNode->right = newNode;
 
 	if (newNode->n > parentNode->n)
-	{
 		swapNode(&newNode);
-	}
-
 	return (newNode);
 }
 
