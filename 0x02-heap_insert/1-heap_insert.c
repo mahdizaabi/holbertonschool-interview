@@ -31,7 +31,7 @@ void swapNode(heap_t **myNode)
 heap_t *testx(heap_t **root)
 {
 	heap_t *node = NULL;
-	heap_t *array[500];
+	heap_t *array[100];
 	int front = -1;
 	int reer = -1;
 
