@@ -88,14 +88,7 @@ heap_t *heap_insert(heap_t **root, int value)
 	}
 
 	parentNode = testx(root);
-
-	newNode = malloc(sizeof(heap_t));
-	if (newNode == NULL)
-		return (NULL);
-	newNode->left = NULL;
-	newNode->right = NULL;
-	newNode->n = value;
-	newNode->parent = parentNode;
+	newNode = binary_tree_node(parentNode, value);
 	if (!parentNode->left)
 		parentNode->left = newNode;
 	else
