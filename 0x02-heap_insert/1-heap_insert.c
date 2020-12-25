@@ -1,99 +1,135 @@
-#include <stdlib.h>
-#include <stdio.h>
 #include "binary_trees.h"
-
 /**
- * swapNode - swap Node.
- * @myNode: pointer to the first node of the list
- * Return: void
+ *swap- sawping the value of 2 nodes
+ *@n1: node 1
+ *@n2: node2
+ * 
+ *Return: void
  */
-void swapNode(heap_t **myNode)
-{
-	heap_t *move;
-	int tmp;
 
-	for (move = *myNode; move->parent; move = move->parent)
-		if (move->n > move->parent->n)
-		{
-			tmp = move->parent->n;
-			move->parent->n = move->n;
-			move->n = tmp;
-			*myNode = (*myNode)->parent;
-		}
+void swap(heap_t* n1, heap_t* n2)
+{
+	int tmp = n2->n;
+
+		n2->n = n1->n;
+		n1->n = tmp;
+		n1 = n2;
 }
 
 /**
- * testx - find the parent node where to insert.
- * @root: root of the tree
- * Return: Pointer to the parent node.
+ *binary_tree_depth- measures the depth of a node in a binary tree
+ *@tree:a pointer to the node to measure the depth
+ *
+ *Return: the depth of node or 0 id tree NULL
  */
-heap_t *testx(heap_t **root)
+size_t binary_tree_depth(heap_t *tree)
 {
-	heap_t *node = NULL;
-	heap_t *array[100];
-	int front = -1;
-	int reer = -1;
+size_t d = 0;
+	if (!tree || !tree->parent)
+		return (d);
 
-	if (front == -1 && reer == -1)
+	d = binary_tree_depth(tree->parent) + 1;
+
+return (d);
+}
+
+/**
+ * insert_node - functin to insert a node in the right position
+ * @node: pointer to node
+ * @lvl: the insertion node level
+ * @value: integer
+ *
+ * Return: a pointer to the node to insert
+ */
+
+heap_t *insert_node(heap_t *node, size_t lvl, int value)
+{
+	heap_t *n1, *n2;
+
+	if (!node)
+		return (NULL);
+
+	if (binary_tree_depth(node) == lvl)
 	{
-		front = reer = 0;
-		array[reer] = *root;
+		if (!node->left && !node->right)
+		{
+			return (node->left = binary_tree_node(node, value));
+		}
+
+		if (node->left && !node->right)
+		{
+			return (node->right = binary_tree_node(node, value));
+		}
+
+		return (NULL);
+
 	}
+
+	n1 = insert_node(node->left, lvl, value);
+
+	if (!n1)
+		n2 = insert_node(node->right, lvl, value);
 	else
-		array[reer + 1] = *root;
-	while (2021)
-	{
-		node = array[front];
-		if (front == reer)
-			front = reer = -1;
-		else
-			front++;
-		if (!node->left)
-		{
-			front = reer = -1;
-			return (node);
-		}
-		else if (!node->right)
-		{
-			front = reer = -1;
-			return (node);
-		}
-		else
-		{
-			reer = reer + 1;
-			array[reer] = node->left;
-			reer = reer + 1;
-			array[reer] = node->right;
-		}
-	}
-	return (node);
+		return (n1);
+	return (n2);
 }
+
 /**
- * heap_insert - Max HEAP insertion function.
- * @root: pointer to the first node of the tree
- * @value: number to be inserted
- * Return: Pointer to the new created node.
+ *binary_tree_height- measures the height of a binary tree
+ *@tree: a pointer to the root node of the tree to measure the height.
+ *Return: nbr of level
+ */
+size_t binary_tree_height(heap_t *tree)
+{
+size_t nr = 0, nf = 0;
+
+	if (!tree || (!(tree->left) && !(tree->right)))
+		return (0);
+	nf = binary_tree_height(tree->left) + 1;
+	nr = binary_tree_height(tree->right) + 1;
+	if (nf > nr)
+		return (nf);
+	else
+		return (nr);
+}
+
+/**
+ * heap_insert - a function to insert a value into a Max binary heap
+ * @root: a double pointer to the heap root node
+ * @value: value to be inserted
+ *
+ * Return: the pointer to the inserted new node, otherwise NULL
  */
 
 heap_t *heap_insert(heap_t **root, int value)
 {
-	heap_t *newNode = NULL;
-	heap_t *parentNode = NULL;
+	heap_t *new_node;
+	size_t lvl = 0, i;
 
-	if (*root == NULL)
+
+	if (!root)
+		return (NULL);
+
+	if (!(*root))
 	{
-		*root = binary_tree_node(*root, value);
-		return (*root);
+		new_node = binary_tree_node(*root, value);
+		*root = new_node;
+		return (new_node);
 	}
-	parentNode = testx(root);
-	newNode = binary_tree_node(parentNode, value);
-	if (!parentNode->left)
-		parentNode->left = newNode;
-	else
-		parentNode->right = newNode;
 
-	if (newNode->n > parentNode->n)
-		swapNode(&newNode);
-	return (newNode);
+	lvl = binary_tree_height(*root);
+
+	for (i = 0; i <= lvl; i++)
+	{
+		new_node = insert_node(*root, i, value);
+		if (new_node)
+			break;
+	}
+	while (new_node->parent && new_node->n > new_node->parent->n)
+	{
+		swap(new_node, new_node->parent);
+		new_node = new_node->parent;
+	}
+
+	return (new_node);
 }
-
