@@ -8,11 +8,11 @@ def minOperations(n):
 
     if n < 2:
         return 0
-    res = 0
     i = 2
+    count = 0
     while i <= n:
         while n % i == 0:
-            res = res + i
+            count = count + i
             n = n/i
         i = i + 1
-    return(res)
+    return(count)
