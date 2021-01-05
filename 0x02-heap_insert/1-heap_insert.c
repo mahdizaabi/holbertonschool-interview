@@ -39,16 +39,15 @@ heap_t *testx(heap_t **root)
 	while (2021)
 	{
 		node = array[front];
-		
 		front++;
 		if (!node->left)
 		{
-			front = reer = -1;
+			front = reer = 0;
 			return (node);
 		}
 		else if (!node->right)
 		{
-			front = reer = -1;
+			front = reer = 0;
 			return (node);
 		}
 		else
