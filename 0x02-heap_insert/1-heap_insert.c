@@ -39,8 +39,6 @@ heap_t *testx(heap_t **root)
 		front = reer = 0;
 		array[reer] = *root;
 	}
-	else
-		array[reer + 1] = *root;
 	while (2021)
 	{
 		node = array[front];
