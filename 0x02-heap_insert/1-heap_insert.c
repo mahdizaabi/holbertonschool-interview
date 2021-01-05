@@ -31,14 +31,11 @@ heap_t *testx(heap_t **root)
 {
 	heap_t *node = NULL;
 	heap_t *array[100];
-	int front = -1;
-	int reer = -1;
+	int front = 0;
+	int reer = 0;
 
-	if (front == -1 && reer == -1)
-	{
-		front = reer = 0;
-		array[reer] = *root;
-	}
+
+	array[reer] = *root;
 	while (2021)
 	{
 		node = array[front];
