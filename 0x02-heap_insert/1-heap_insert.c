@@ -18,7 +18,6 @@ void swapNode(heap_t **myNode)
 			tmp = move->parent->n;
 			move->parent->n = move->n;
 			move->n = tmp;
-			*myNode = (*myNode)->parent;
 		}
 }
 
