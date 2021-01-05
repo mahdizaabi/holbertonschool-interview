@@ -39,10 +39,8 @@ heap_t *testx(heap_t **root)
 	while (2021)
 	{
 		node = array[front];
-		if (front == reer)
-			front = reer = -1;
-		else
-			front++;
+		
+		front++;
 		if (!node->left)
 		{
 			front = reer = -1;
@@ -61,7 +59,7 @@ heap_t *testx(heap_t **root)
 			array[reer] = node->right;
 		}
 	}
-	return (node);
+	
 }
 /**
  * heap_insert - Max HEAP insertion function.
