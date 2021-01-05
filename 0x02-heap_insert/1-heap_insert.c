@@ -58,7 +58,6 @@ heap_t *testx(heap_t **root)
 			array[reer] = node->right;
 		}
 	}
-	
 }
 /**
  * heap_insert - Max HEAP insertion function.
