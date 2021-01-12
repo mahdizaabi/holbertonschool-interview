@@ -1,11 +1,9 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """ minimum operation """
 
 
 def minOperations(n):
     """ check the minimum number of operation """
-
-
     if n < 2:
         return 0
     i = 2
