@@ -85,9 +85,8 @@ void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 
 	printf("=\n");
 	print_grid(grid1);
-	while (checkForUnstable(grid1))
+	while ("2021!")
 	{
-
 		copyReference(grid1, referenceGrid);
 		for (x = 0; x < 3; x++)
 			for (y = 0; y < 3; y++)
