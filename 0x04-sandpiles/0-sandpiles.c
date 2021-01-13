@@ -13,6 +13,7 @@
 static void print_grid(int grid[3][3])
 {
 	int i, j;
+
 	for (i = 0; i < 3; i++)
 	{
 		for (j = 0; j < 3; j++)
@@ -50,6 +51,7 @@ void copyReference(int src[3][3], int dest[3][3])
 int checkForUnstable(int arr[3][3])
 {
 	int x, y;
+
 	for (x = 0; x < 3; x++)
 	{
 		for (y = 0; y < 3; y++)
