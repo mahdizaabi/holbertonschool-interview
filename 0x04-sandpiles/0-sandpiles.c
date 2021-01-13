@@ -12,9 +12,10 @@
   */
 static void print_grid(int grid[3][3])
 {
-	for (int i = 0; i < 3; i++)
+	int i, j;
+	for (i = 0; i < 3; i++)
 	{
-		for (int j = 0; j < 3; j++)
+		for (j = 0; j < 3; j++)
 		{
 			if (j)
 				printf(" ");
@@ -33,10 +34,12 @@ static void print_grid(int grid[3][3])
 
 void copyReference(int src[3][3], int dest[3][3])
 {
-	for (int i = 0; i < 3; i++)
-		for (int y = 0; y < 3; y++)
+	int x, y;
+
+	for (x = 0; x < 3; x++)
+		for (y = 0; y < 3; y++)
 		{
-			dest[i][y] = src[i][y];
+			dest[x][y] = src[x][y];
 		}
 }
 /**
@@ -46,10 +49,10 @@ void copyReference(int src[3][3], int dest[3][3])
   */
 int checkForUnstable(int arr[3][3])
 {
-
-	for (int x = 0; x < 3; x++)
+	int x, y;
+	for (x = 0; x < 3; x++)
 	{
-		for (int y = 0; y < 3; y++)
+		for (y = 0; y < 3; y++)
 		{
 			if (arr[x][y] > 3)
 				return (1);
