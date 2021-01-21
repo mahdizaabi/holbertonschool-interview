@@ -11,7 +11,6 @@
 int is_palindrome(listint_t **head)
 {
 
-
 	listint_t *counter = NULL;
 	int stack[2068];
 	int endStack = 0;
@@ -20,9 +19,7 @@ int is_palindrome(listint_t **head)
 
 	if (*head == NULL)
 		return (1);
-
 	counter = *head;
-
 	while (counter)
 	{
 		stack[endStack++] = counter->n;
@@ -34,7 +31,6 @@ int is_palindrome(listint_t **head)
 	{
 		if (stack[frontStack++] != stack[endStack--])
 			return (0);
-
 	}
 	return (1);
 }
