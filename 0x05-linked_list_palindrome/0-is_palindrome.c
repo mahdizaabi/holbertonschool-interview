@@ -27,8 +27,8 @@ int is_palindrome(listint_t **head)
 	while (counter)
 	{
 		count = count + 1;
-		stack[endStack] = counter->n;
-		endStack++;
+		stack[endStack++] = counter->n;
+		//endStack++;
 		counter = counter->next;
 	}
 	endStack--;
