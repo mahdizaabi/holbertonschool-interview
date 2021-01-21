@@ -32,10 +32,8 @@ int is_palindrome(listint_t **head)
 	r = endStack / 2 + 1;
 	while (endStack >= r)
 	{
-		if (stack[frontStack] != stack[endStack])
+		if (stack[frontStack++] != stack[endStack++])
 			return (0);
-		frontStack++;
-		endStack--;
 	}
 	return (1);
 }
