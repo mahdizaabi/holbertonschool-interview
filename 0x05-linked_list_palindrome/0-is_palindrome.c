@@ -10,7 +10,6 @@
  */
 int is_palindrome(listint_t **head)
 {
-
 	listint_t *counter = NULL;
 	int stack[2068];
 	int endStack = 0;
