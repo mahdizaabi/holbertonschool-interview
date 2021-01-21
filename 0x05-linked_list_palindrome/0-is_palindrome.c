@@ -12,9 +12,7 @@ int is_palindrome(listint_t **head)
 {
 	listint_t *counter = NULL;
 	int stack[2068];
-	int endStack = 0;
-	int frontStack = 0;
-	int r = 0;
+	int endStack, frontStack, r = 0;
 
 	if (*head == NULL)
 		return (1);
