@@ -14,7 +14,7 @@ int is_palindrome(listint_t **head)
 
 	listint_t *counter = NULL;
 	int count = 0;
-	int stack[1024];
+	int stack[2068];
 	int endStack = 0;
 	int frontStack = 0;
 	int r = 0;
