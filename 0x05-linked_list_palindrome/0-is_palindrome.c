@@ -37,13 +37,8 @@ int is_palindrome(listint_t **head)
 	{
 		if (stack[frontStack] != stack[endStack])
 			return (0);
-		printf("%d\n", stack[endStack]);
 		frontStack++;
 		endStack--;
 	}
 	return (1);
-
-
-
-
 }
