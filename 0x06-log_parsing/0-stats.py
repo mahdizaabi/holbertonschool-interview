@@ -37,15 +37,6 @@ try:
             for key, value in status.items():
                 if len(value) != 0:
                     print('{}: {}'.format(key, len(value)))
-            status = {
-               "200": [],
-               "301": [],
-               "400": [],
-               "401": [],
-               "403": [],
-               "404": [],
-               "405": [],
-               "500": []}
             counter = 0
 
 except KeyboardInterrupt:
