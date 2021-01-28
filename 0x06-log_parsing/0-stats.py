@@ -42,5 +42,3 @@ try:
     printx(data, status)
 except KeyboardInterrupt as e:
     printx(data, status)
-
-
