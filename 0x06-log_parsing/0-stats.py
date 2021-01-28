@@ -43,8 +43,6 @@ try:
                "405": [],
                "500": []}
 
-            somme = 0
-            data_Buffer = []
 except KeyboardInterrupt:
     #pass
 #finally:
