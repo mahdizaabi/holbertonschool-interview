@@ -22,6 +22,7 @@ regex = '([(\d\.)]+) - \[(.*?)\] "(.*?)" (\d+) (\d+)'
 
 try:
     for line in sys.stdin:
+        print(line)
         counter = counter + 1
         if counter % 10 == 0:
             for i in data_Buffer:
