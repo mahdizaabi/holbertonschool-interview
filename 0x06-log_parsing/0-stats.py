@@ -40,7 +40,6 @@ try:
         except Exception as e:
             pass
     printx(data, status)
-except KeyboardInterrupt:
+except KeyboardInterrupt as e:
     printx(data, status)
-    raise
 
