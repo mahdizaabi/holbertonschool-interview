@@ -43,4 +43,3 @@ try:
 except KeyboardInterrupt:
     printx(data, status)
     raise
-
