@@ -40,6 +40,7 @@ try:
                 if len(value) != 0:
                     print('{}: {}'.format(key, len(value)))
             counter = 0
+
 except KeyboardInterrupt:
     print('File size: {}'.format(somme))
     for key, value in status.items():
