@@ -30,6 +30,7 @@ try:
                 data_Buffer.append(line.rsplit(None, 1)[-1])
                 counter = counter + 1
         except Exception as e:
+            data_Buffer.append(line.rsplit(None, 1)[-1])
             counter = counter + 1
 
         if counter == 10:
