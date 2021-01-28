@@ -7,7 +7,16 @@ import re
 
 data_Buffer = []
 somme = 0
-status = {'200':[], '301':[], '400':[], '401':[], '403':[], '404':[], '405':[], '500':[]}
+
+status = {
+    "200": [],
+    "301": [],
+    "400": [],
+    "401": [],
+    "403": [],
+    "404": [],
+    "405": [],
+    "500": []}
 counter = 0
 regex = '([(\d\.)]+) - \[(.*?)\] "(.*?)" (\d+) (\d+)'
 
@@ -19,7 +28,15 @@ try:
             print('File size: {}'.format(somme))
             for key, value in status.items():
                 print('{}: {}'.format(key, len(value)))
-            status = {'200':[], '301':[], '400':[], '401':[], '403':[], '404':[], '405':[], '500':[]}
+            mydict = {
+               "200": 0,
+               "301": 0,
+               "400": 0,
+               "401": 0,
+               "403": 0,
+               "404": 0,
+               "405": 0,
+               "500": 0}
             counter = 0
             somme = 0
             data_Buffer = []
@@ -35,3 +52,4 @@ finally:
     print('File size: {}'.format(somme))
     for key, value in status.items():
                 print('{}: {}'.format(key, len(value)))
+
