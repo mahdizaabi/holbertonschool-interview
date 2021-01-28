@@ -4,6 +4,7 @@
 
 import sys
 
+
 def printx(data, status):
     """ print the log """
     try:
@@ -42,3 +43,4 @@ try:
 except KeyboardInterrupt:
     printx(data, status)
     raise
+
