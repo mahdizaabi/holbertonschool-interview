@@ -7,13 +7,11 @@ import sys
 
 def printx(data, status):
     """ print the log """
-    try:
-        print("File size: {}".format(data))
-        for key, value in sorted(status.items()):
-            if value != 0:
-                print("{}: {}".format(key, value))
-    except Exception as e:
-        pass
+    
+    print("File size: {}".format(data))
+    for key, value in sorted(status.items()):
+        if value != 0:
+            print("{}: {}".format(key, value))
 
 status = {
     "200": 0, "301": 0, "400": 0, "401": 0,
