@@ -23,7 +23,7 @@ regex = '([(\d\.)]+) - \[(.*?)\] "(.*?)" (\d+) (\d+)'
 try:
     for line in sys.stdin:
         counter = counter + 1
-        if counter == 10:
+        if counter % 10 == 0:
             for i in data_Buffer:
                 somme = somme + int(i)
             print('File size: {}'.format(somme))
@@ -38,7 +38,7 @@ try:
                "404": [],
                "405": [],
                "500": []}
-            counter = 0
+
             somme = 0
             data_Buffer = []
 
