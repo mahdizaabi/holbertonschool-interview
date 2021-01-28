@@ -21,7 +21,6 @@ regex = '([(\d\.)]+) - \[(.*?)\] "(.*?)" (\d+) (\d+)'
 try:
     for line in sys.stdin:
         try:
-
             if re.match(regex, line).groups()[3] in status.keys():
                 status[re.match(regex, line).groups()[3]].append(1)
                 data_Buffer.append(re.match(regex, line).groups()[4])
@@ -31,6 +30,8 @@ try:
                 counter = counter + 1
         except Exception as e:
             try:
+                if line.rsplit(None, 2)[-2] in status.keys():
+                    status[line.rsplit(None, 2)[-2]].append(1)
                 data_Buffer.append(line.rsplit(None, 1)[-1])
             except Exception as e:
                 counter = counter + 1
