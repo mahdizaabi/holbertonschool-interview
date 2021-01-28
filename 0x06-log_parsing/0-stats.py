@@ -4,7 +4,7 @@
 
 import sys
 
-def print(data, status):
+def printx(data, status):
     """ print the log """
     try:
         print("File size: {}".format(data))
@@ -22,7 +22,7 @@ data = 0
 try:
     for line in sys.stdin:
         if counter == 10:
-            print(data, status)
+            printx(data, status)
             counter = 1
 
         else:
@@ -38,7 +38,7 @@ try:
                     status[key] = status[key] + 1
         except Exception as e:
             pass
-    print(data, status)
+    printx(data, status)
 except KeyboardInterrupt:
-    print(data, status)
+    printx(data, status)
     raise
