@@ -18,18 +18,21 @@ status = {
     "500": []}
 counter = 0
 regex = '([(\d\.)]+) - \[(.*?)\] "(.*?)" (\d+) (\d+)'
-
 try:
     for line in sys.stdin:
         try:
+
             if re.match(regex, line).groups()[3] in status.keys():
                 status[re.match(regex, line).groups()[3]].append(1)
                 data_Buffer.append(re.match(regex, line).groups()[4])
                 counter = counter + 1
+                print("treated {}:".format(line))
             else:
+                data_Buffer.append(line.rsplit(None, 1)[-1])
                 counter = counter + 1
         except Exception as e:
             counter = counter + 1
+
         if counter == 10:
             for i in data_Buffer:
                 somme = somme + int(i)
