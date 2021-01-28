@@ -25,11 +25,15 @@ try:
         if re.match(regex, line).groups()[3] in status.keys():
             status[re.match(regex, line).groups()[3]].append(1)
             data_Buffer.append(re.match(regex, line).groups()[4])
-        counter = counter + 1
-        if counter == 11:
+            counter = counter + 1
+        else:
+            counter = counter + 1
+
+        if counter == 10:
             for i in data_Buffer:
                 somme = somme + int(i)
             print('File size: {}'.format(somme))
+
             for key, value in status.items():
                 if len(value) != 0:
                     print('{}: {}'.format(key, len(value)))
@@ -42,6 +46,7 @@ try:
                "404": [],
                "405": [],
                "500": []}
+            counter = 0
 
 except KeyboardInterrupt:
     #pass
