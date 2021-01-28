@@ -22,10 +22,13 @@ regex = '([(\d\.)]+) - \[(.*?)\] "(.*?)" (\d+) (\d+)'
 
 try:
     for line in sys.stdin:
-        if re.match(regex, line).groups()[3] in status.keys():
-            status[re.match(regex, line).groups()[3]].append(1)
-            data_Buffer.append(re.match(regex, line).groups()[4])
-            counter = counter + 1
+        try:
+            if re.match(regex, line).groups()[3] in status.keys():
+                status[re.match(regex, line).groups()[3]].append(1)
+                data_Buffer.append(re.match(regex, line).groups()[4])
+                counter = counter + 1
+        except Exception as e:
+            pass
         else:
             counter = counter + 1
 
