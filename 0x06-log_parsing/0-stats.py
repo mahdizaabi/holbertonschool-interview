@@ -30,8 +30,10 @@ try:
                 data_Buffer.append(line.rsplit(None, 1)[-1])
                 counter = counter + 1
         except Exception as e:
-            data_Buffer.append(line.rsplit(None, 1)[-1])
-            counter = counter + 1
+            try:
+                data_Buffer.append(line.rsplit(None, 1)[-1])
+            except Exception as e:
+                counter = counter + 1
 
         if counter == 10:
             for i in data_Buffer:
@@ -45,6 +47,8 @@ try:
 except KeyboardInterrupt:
     pass
 finally:
+    for i in data_Buffer:
+                somme = somme + int(i)
     print('File size: {}'.format(somme))
     for key, value in status.items():
         if len(value) != 0:
