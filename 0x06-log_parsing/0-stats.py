@@ -27,12 +27,11 @@ try:
                 status[re.match(regex, line).groups()[3]].append(1)
                 data_Buffer.append(re.match(regex, line).groups()[4])
                 counter = counter + 1
+            else:
+                counter = counter + 1
         except Exception as e:
             counter = counter + 1
-        else:
-            counter = counter + 1
-
-        if counter % 10 == 0:
+        if counter == 10:
             for i in data_Buffer:
                 somme = somme + int(i)
             print('File size: {}'.format(somme))
@@ -40,6 +39,7 @@ try:
             for key, value in status.items():
                 if len(value) != 0:
                     print('{}: {}'.format(key, len(value)))
+            counter = 0
 except KeyboardInterrupt:
     print('File size: {}'.format(somme))
     for key, value in status.items():
