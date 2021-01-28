@@ -22,7 +22,8 @@ regex = '([(\d\.)]+) - \[(.*?)\] "(.*?)" (\d+) (\d+)'
 
 try:
     for line in sys.stdin:
-        if counter == 9:
+        counter = counter + 1
+        if counter == 10:
             for i in data_Buffer:
                 somme = somme + int(i)
             print('File size: {}'.format(somme))
@@ -44,7 +45,6 @@ try:
         if re.match(regex, line).groups()[3] in status.keys():
             status[re.match(regex, line).groups()[3]].append(1)
             data_Buffer.append(re.match(regex, line).groups()[4])
-            counter = counter + 1
             continue
 except KeyboardInterrupt:
     pass
