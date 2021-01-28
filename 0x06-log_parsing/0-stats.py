@@ -22,7 +22,6 @@ try:
         if counter == 10:
             printx(data, status)
             counter = 1
-
         else:
             counter = counter + 1
         parsed = line.split()
@@ -30,12 +29,9 @@ try:
             data = data + int(parsed[-1])
         except Exception as e:
             pass
-        try:
-            for key, value in status.items():
-                if key == parsed[-2]:
-                    status[key] = status[key] + 1
-        except Exception as e:
-            pass
+        for key, value in status.items():
+            if key == parsed[-2]:
+                status[key] = status[key] + 1
     printx(data, status)
 except KeyboardInterrupt as e:
     printx(data, status)
