@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-'''log parser algorithm'''
+'''log parsing'''
 
 import sys
 import re
