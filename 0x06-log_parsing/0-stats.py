@@ -17,13 +17,12 @@ status = {
     "404": [],
     "405": [],
     "500": []}
-counter = 0
+counter = 1
 regex = '([(\d\.)]+) - \[(.*?)\] "(.*?)" (\d+) (\d+)'
 
 try:
     for line in sys.stdin:
-        print(line)
-        counter = counter + 1
+        #counter = counter + 1
         if counter % 10 == 0:
             for i in data_Buffer:
                 somme = somme + int(i)
@@ -40,17 +39,20 @@ try:
                "405": [],
                "500": []}
 
-            somme = 0
-            data_Buffer = []
+            #somme = 0
+            #data_Buffer = []
 
         if re.match(regex, line).groups()[3] in status.keys():
             status[re.match(regex, line).groups()[3]].append(1)
+            #print('ok')
             data_Buffer.append(re.match(regex, line).groups()[4])
-            continue
+            #print(re.match(regex, line).groups()[4])
+        counter = counter + 1
 except KeyboardInterrupt:
-    pass
-finally:
+    #pass
+#finally:
     print('File size: {}'.format(somme))
     for key, value in status.items():
                 print('{}: {}'.format(key, len(value)))
+
 
