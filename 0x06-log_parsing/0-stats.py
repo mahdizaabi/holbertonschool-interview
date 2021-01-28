@@ -29,9 +29,12 @@ try:
             data = data + int(parsed[-1])
         except Exception as e:
             pass
-        for key, value in status.items():
-            if key == parsed[-2]:
-                status[key] = status[key] + 1
+        try:
+            for key, value in status.items():
+                if key == parsed[-2]:
+                    status[key] = status[key] + 1
+        except Exception as e:
+            pass
     printx(data, status)
 except KeyboardInterrupt as e:
     printx(data, status)
