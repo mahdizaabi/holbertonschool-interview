@@ -7,7 +7,6 @@ import sys
 
 def printx(data, status):
     """ print the log """
-    
     print("File size: {}".format(data))
     for key, value in sorted(status.items()):
         if value != 0:
