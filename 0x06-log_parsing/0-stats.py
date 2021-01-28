@@ -38,6 +38,7 @@ try:
                     status[key] = status[key] + 1
         except Exception as e:
             pass
+    print(data, status)
 except KeyboardInterrupt:
     print(data, status)
     raise
