@@ -26,7 +26,6 @@ try:
                 status[re.match(regex, line).groups()[3]].append(1)
                 data_Buffer.append(re.match(regex, line).groups()[4])
                 counter = counter + 1
-                print("treated {}:".format(line))
             else:
                 data_Buffer.append(line.rsplit(None, 1)[-1])
                 counter = counter + 1
