@@ -7,13 +7,10 @@ import sys
 
 def printx(data, status):
     """ print the log """
-    try:
-        print("File size: {}".format(data))
-        for key, value in sorted(status.items()):
-            if value != 0:
-                print("{}: {}".format(key, value))
-    except Exception as e:
-        pass
+    print("File size: {}".format(data))
+    for key, value in sorted(status.items()):
+        if value != 0:
+            print("{}: {}".format(key, value))
 
 status = {
     "200": 0, "301": 0, "400": 0, "401": 0,
@@ -25,7 +22,6 @@ try:
         if counter == 10:
             printx(data, status)
             counter = 1
-
         else:
             counter = counter + 1
         parsed = line.split()
@@ -42,5 +38,3 @@ try:
     printx(data, status)
 except KeyboardInterrupt as e:
     printx(data, status)
-
-
