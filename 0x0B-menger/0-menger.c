@@ -6,10 +6,10 @@
 /**
  * checkForBlank - Checks if indices are (1, 1), if so, then square is blank
  *
- * @i: Row Index
- * @j: Column Index
+ * @i: row
+ * @j: column
  *
- * Return: 1 if (1, 1), 0 otherwise
+ * Return: 1 
  */
 
 int checkForBlank(int i, int j)
