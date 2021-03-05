@@ -29,7 +29,7 @@ int checkForBlank(int i, int j)
  *
  * @level: level of the spenge
  *
- * Return: Nothing
+ * Return: void
  */
 void menger(int level)
 {
@@ -41,8 +41,10 @@ void menger(int level)
 	for (index = 0, max = pow(3, level); index < max; index++)
 	{
 		for (j = 0; j < max; j++)
-			checkForBlank(index, j) == 1 ? printf("%c", '#') : printf("%c", ' ');
-
+			if(checkForBlank(index, j))
+				printf("%c", '#');
+			else
+				printf("%c", ' ');
 		printf("\n");
 	}
 }
