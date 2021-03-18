@@ -5,7 +5,7 @@ an N×N chessboard"""
 import sys
 
 
-def printSolution(board):
+def printBoard(board):
     """[print solution]
 
     Args:
@@ -41,18 +41,10 @@ def isSafe(board, row, col, N):
 
 def nQueen(board, col, N):
     """[Place the Queen in the right position]
-
-    Args:
-        board ([type]): [description]
-        col ([type]): [description]
-        N ([type]): [description]
-
-    Returns:
-        [type]: [description]
     """
 
     if (col >= N):
-        printSolution(board)
+        printBoard(board)
 
     for x in range(N):
         if isSafe(board, x, col, N):
