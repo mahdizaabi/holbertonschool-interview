@@ -1,13 +1,12 @@
 #!/usr/bin/python3
 """The N queens puzzle is the challenge
-of placing N non-attacking queens on 
+of placing N non-attacking queens on
 an N×N chessboard"""
 import sys
 
 
 def printBoard(board):
     """[print solution]
-
     Args:
         board ([type]): [description]
     """
@@ -49,7 +48,7 @@ def nQueen(board, col, N):
     for x in range(N):
         if isSafe(board, x, col, N):
             board[x][col] = 1
-            if nQueen(board, col+1, N) == True:
+            if nQueen(board, col+1, N):
                 return True
             board[x][col] = 0
 
