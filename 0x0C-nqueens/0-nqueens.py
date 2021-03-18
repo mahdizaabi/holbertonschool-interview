@@ -24,7 +24,7 @@ def isSafe(board, row, col, N):
     """
     for i in range(col):
 
-        if board[row][i] == 1:
+        if board[row][i] + board[row][i + 1] != 0:
             return False
 
     for i, j in zip(range(row, -1, -1), range(col, -1, -1)):
