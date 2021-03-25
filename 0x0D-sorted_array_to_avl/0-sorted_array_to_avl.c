@@ -1,8 +1,9 @@
 #include "binary_trees.h"
 
 /**
- * binary_tree_node - create node
+ * createNewNode - create node
  *
+ * @parent: parent of the created node
  * @n: Size of the array
  * Return: new node
  */
@@ -23,11 +24,12 @@ avl_t *createNewNode(avl_t *parent, size_t n)
 }
 
 /**
- * insert_node_AVL - builds an AVL tree from an array
+ * createAvlTree - build an AVL tree from an array
  *
  * @array: sorted array
  * @start: first index
  * @end: last index
+ * @parent: parent of the created node
  *
  * Return: root of the tree
  */
@@ -67,6 +69,5 @@ avl_t *sorted_array_to_avl(int *array, size_t size)
 	if (!array)
 		return (NULL);
 
-	return(root = createAvlTree(array, 0, size - 1, NULL));
-
+	return (root = createAvlTree(array, 0, size - 1, NULL));
 }
