@@ -35,8 +35,7 @@ skiplist_t *linear_skip(skiplist_t *list, int value)
 			printf("Value checked at index [%lu] = [%d]\n", scooter->index, scooter->n);
 			if (scooter->n == value)
 				return (scooter);
-			scooter = scooter->next;
-		}
+			scooter = scooter->next; }
 	}
 	scooter = scooter->express;
 	printf("Value checked at index [%lu] = [%d]\n", scooter->index, scooter->n); }
@@ -49,5 +48,6 @@ skiplist_t *linear_skip(skiplist_t *list, int value)
 	{
 		printf(check, tempScooter->index, tempScooter->n);
 		tempScooter = tempScooter->next; }
+	printf(check, tempScooter->index, tempScooter->n);
 	return (NULL);
 }
