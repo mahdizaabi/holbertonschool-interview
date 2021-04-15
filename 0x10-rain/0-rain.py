@@ -15,7 +15,7 @@ def rain(walls):
 
     if len(walls) == 0:
         return 0
-    res = 0
+    somme = 0
     for i in range(1, len(walls) - 1):
         left = walls[i]
         for j in range(i):
@@ -24,6 +24,6 @@ def rain(walls):
 
         for j in range(i + 1, len(walls)):
             right = max(right, walls[j])
-        res = res + (min(left, right) - walls[i])
+        somme = somme + (min(left, right) - walls[i])
 
-    return res
+    return somme
