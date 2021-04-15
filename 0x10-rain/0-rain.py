@@ -48,6 +48,12 @@ def rain(walls):
     if len(walls) == 0:
         return 0
     total = 0
+    t = 0
+    for ele in range(0, len(walls)):
+        t = t + walls[ele]
+
+    if t == 0:
+        return 0
     pop_zeros(walls)
     for index, value in enumerate(walls[:-1]):
         if value != 0 and BorderLine(walls, index):
