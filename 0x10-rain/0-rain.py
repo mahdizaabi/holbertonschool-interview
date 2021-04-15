@@ -3,7 +3,8 @@
 
 
 def getWall(walls, startingIndex):
-    """[summary]
+    """[function that calculate how much water
+    will be retained after it rains]
 
     Args:
         walls ([type]): [description]
@@ -18,19 +19,27 @@ def getWall(walls, startingIndex):
 
 
 def pop_zeros(items):
+    """[function that calculate how much water
+    will be retained after it rains]
+
+    Args:
+        items ([type]): [description]
+    """
     while items[-1] == 0:
         items.pop()
 
 
 def BorderLine(berg, index):
-    """[summary]
+    """[function that calculate how much water
+    will be retained after it rains]
     """
     if berg[index+1] == 0:
         return True
 
 
 def rain(walls):
-    """[summary]
+    """[function that calculate how much water
+    will be retained after it rains]
 
     Args:
         walls ([type]): [description]
