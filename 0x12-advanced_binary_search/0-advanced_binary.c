@@ -35,12 +35,11 @@ int BinarySearch(int *array, int min, int max, int value)
 
 	printf("Searching in array: ");
 	print_array(array, min, max);
+    if (min == max && array[max] != value)
+		return (-1);
 
 	if (min == max && array[max] == value)
 		return (max);
-
-	if (min == max && array[max] != value)
-		return (-1);
 
 	mid = min + (max - min) / 2;
 
