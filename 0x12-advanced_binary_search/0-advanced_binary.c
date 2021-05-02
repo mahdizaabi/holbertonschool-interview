@@ -52,7 +52,7 @@ int BinarySearch(int *array, int min, int max, int value)
 	return (BinarySearch(array, mid + 1, max, value));
 }
 /**
- * advanced_binary - searches for a value in a sorted array 
+ * advanced_binary - searches for a value in a sorted array
  * @array: pointer to the first element of the array to search in
  * @size: number of elements in array
  * @value: value to search for
