@@ -5,7 +5,9 @@
 
 
 def rotate_2d_matrix(matrix):
-    """ Rotate 90° matrix Rotate 2D Matrix"""
+    """ Rotate 90° matrix Rotate 2D Matrix
+    n² time complexity
+    """
     temp = matrix.copy()
     matrix.clear()
     for y in range(len(temp[0])):
