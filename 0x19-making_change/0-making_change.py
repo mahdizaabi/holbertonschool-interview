@@ -14,7 +14,7 @@ def makeChange(coins, total):
     Returns:
         [type]: [description]
     """
- coinsCombination = 0
+    coinsCombination = 0
     if total <= 0:
         return 0
     coins.sort()
