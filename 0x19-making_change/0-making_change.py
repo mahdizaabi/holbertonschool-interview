@@ -23,9 +23,9 @@ def makeChange(coins, total):
                 temp = coins[j+1]
                 coins[j+1] = coins[j]
                 coins[j] = temp
-    for c in coins:
-        coinsNumber += total // c
-        total = total % c
+    for coin in coins:
+        coinsNumber += total // coin
+        total = total % coin
     if (total != 0):
         return -1
     return coinsNumber
