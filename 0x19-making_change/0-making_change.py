@@ -16,20 +16,16 @@ def makeChange(coins, total):
     """
     if len(coins) == 0 or total <= 0:
         return -1
-    coin = 0
-    neededCoins = 0
-    remainingCoins = total
-    flag = False
+    coinsNumber = 0
     for i in range(len(coins)):
-        if coin != 0:
-            neededCoins = remainingCoins // coin + neededCoins
-            remainingCoins = remainingCoins % coin
-            if remainingCoins == 0:
-                return neededCoins
         for j in range(len(coins) - 1):
-            if coins[j] > coins[j+1]:
+            if coins[j] < coins[j+1]:
                 temp = coins[j+1]
                 coins[j+1] = coins[j]
                 coins[j] = temp
-        coin = coins[len(coins) - i - 1]
-    return -1
+    for c in coins:
+        coinsNumber += total // c
+        total = total % c
+    if (total != 0):
+        return -1
+    return coinsNumber
