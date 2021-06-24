@@ -14,7 +14,7 @@ def makeChange(coins, total):
     Returns:
         [type]: [description]
     """
-    if len(coins) == 0 or total == 0:
+    if len(coins) == 0 or total <= 0:
         return -1
     coin = 0
     neededCoins = 0
@@ -25,15 +25,11 @@ def makeChange(coins, total):
             neededCoins = remainingCoins // coin + neededCoins
             remainingCoins = remainingCoins % coin
             if remainingCoins == 0:
-                flag = True
-                break
+                return neededCoins
         for j in range(len(coins) - 1):
             if coins[j] > coins[j+1]:
                 temp = coins[j+1]
                 coins[j+1] = coins[j]
                 coins[j] = temp
         coin = coins[len(coins) - i - 1]
-    if(flag):
-        return neededCoins
-    else:
-        return -1
+    return -1
