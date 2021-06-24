@@ -20,7 +20,7 @@ coinsNumber = 0
     coins.sort()
     coins.reverse()
     for coin in coins:
-        coinsNumber += total // c
+        coinsNumber += total // coin
         total = total % coin
     if (total != 0):
         return -1
