@@ -67,7 +67,7 @@ return (maxNum);
 void radix_sort(int *array, size_t size)
 {
 
-if (size <= 2)
+if (array == NULL || size < 2)
 return;
 
 
@@ -88,7 +88,7 @@ print_array(array, size);
 free(sortedArray);
 sortedArray = NULL;
 }
-sortedArray = malloc(sizof(int) * size);
+sortedArray = malloc(sizeof(int) * size);
 for (int rindex = 0; rindex < 10; rindex++)
 {
 for (int aindex = 0; aindex < (int)size; aindex++)
