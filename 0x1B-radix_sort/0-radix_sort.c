@@ -25,7 +25,7 @@ return (maxNum);
  * getDigit - get the significant digit
  * @number: num
  * @position: postion of the digit to be extracted
- * Return: int
+ * Return: digit integer
  */
 int getDigit(int number, int position)
 {
@@ -44,12 +44,12 @@ void countingSort(int *array, int exp, int size)
 	int i;
 	int digit;
 	int counting[10] = { 0 };
-	int *temp = NULL;
+	int *sortedArray = NULL;
 	int k;
 
 
-	temp = malloc(sizeof(int) * size);
-	if (!temp)
+	sortedArray = malloc(sizeof(int) * size);
+	if (!sortedArray)
 		return;
 
 	for (i = 0; i < size; i++)
@@ -62,14 +62,15 @@ void countingSort(int *array, int exp, int size)
 	{
 		digit = getDigit(array[i], exp);
 		k = --counting[digit];
-		temp[k] = array[i];
+		sortedArray[k] = array[i];
 	}
 
 	for (i = 0; i < size; i++)
-		array[i] = temp[i];
+		array[i] = sortedArray[i];
 
 	print_array(array, (size_t)size);
-	free(temp);
+	free(sortedArray);
+	sortedArray = NULL;
 }
 /**
  * radix_sort - sort an array using the radix algo
