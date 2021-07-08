@@ -89,7 +89,7 @@ for (int rindex = 0; rindex < (int)size; rindex++)
 {
 for (int aindex = 0; aindex < (int)size; aindex++)
 {
-if (get_digit(array[aindex], position) == rindex)
+if (get_digit(array[aindex], pos) == rindex)
 {
 sortedArray[k] = array[aindex];
 k++;
