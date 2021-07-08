@@ -71,31 +71,31 @@ int *sortedArray = NULL;
 int k = 0;
 int flag = 0;
 
-for (int pos = 0; pos < getLength(get_max(array, size)) + 1; pos++)
+for (int pos = 0; pos < getLength(get_max(array, size))+1; pos++)
 {
 
-k = 0;
-if (flag != 0)
-{
-for (int j = 0; j < 10; j++)
-{
-array[j] = sortedArray[j];
-}
-print_array(array, size);
-}
-sortedArray = NULL;
-sortedArray = malloc(sizeof(int) * size);
-for (int rindex = 0; rindex < (int)size; rindex++)
-{
-for (int aindex = 0; aindex < (int)size; aindex++)
-{
-if (get_digit(array[aindex], pos) == rindex)
-{
-sortedArray[k] = array[aindex];
-k++;
-}
-flag = 1;
-}
-}
-}
+    k = 0;
+    if (flag != 0)
+    {
+        for (int j = 0; j < (int)size; j++)
+    {
+        array[j] = sortedArray[j];
+    }
+    print_array(array, size);
+    }
+    sortedArray = NULL;
+    sortedArray = malloc(sizeof(int) * size);
+    for (int rindex = 0; rindex <10; rindex++)
+    {
+        for (int aindex = 0; aindex < (int)size; aindex++)
+    {
+        if (get_digit(array[aindex], pos) == rindex)
+    {
+        sortedArray[k] = array[aindex];
+        k++;
+    }   
+    flag = 1;
+    }
+        }
+    }
 }
