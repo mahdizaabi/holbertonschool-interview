@@ -73,6 +73,9 @@ return;
 int *sortedArray = NULL;
 int k = 0;
 int flag = 0;
+sortedArray = malloc(sizeof(int) * size);
+if (sortedArray == NULL)
+return;
 
 for (int pos = 0; pos < getLength(get_max(array, size)) + 1; pos++)
 {
@@ -84,12 +87,8 @@ for (int j = 0; j < (int)size; j++)
 array[j] = sortedArray[j];
 }
 print_array(array, size);
-free(sortedArray);
-sortedArray = NULL;
+
 }
-sortedArray = malloc(sizeof(int) * size);
-if (sortedArray == NULL)
-return;
 
 for (int rindex = 0; rindex < 10; rindex++)
 {
