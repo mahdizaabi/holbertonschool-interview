@@ -6,15 +6,14 @@ int get_digit(int number, int n)
 {
     if (n == 0)
     {
-        return number % 10;
+    return number % 10;
     }
     int r = 10;
     for (int x = 0; x < n - 1; x++)
     {
-        r = r * r;
+    r = r * r;
     }
-
-    return number / r % 10;
+return number / r % 10;
 }
 
 int getLength(int number)
