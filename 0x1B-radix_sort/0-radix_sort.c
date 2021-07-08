@@ -43,12 +43,12 @@ void countingSort(int *array, int exp, int size)
 {
 	int i;
 	int digit;
-	int counting[10] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+	int counting[10] = { 0 };
 	int *temp = NULL;
 	int k;
 
 
-	temp = (int *)malloc(sizeof(int) * size);
+	temp = malloc(sizeof(int) * size);
 	if (!temp)
 		return;
 
@@ -82,7 +82,7 @@ void radix_sort(int *array, size_t size)
 	int maximum = getMaximum(array, (int)size);
 	int exp = 1;
 
-	if (array == NULL || size <= 2)
+	if (array == NULL || size < 2)
 		return;
 
 	for (; maximum / exp > 0; exp *= 10)
