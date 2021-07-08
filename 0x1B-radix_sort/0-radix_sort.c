@@ -82,7 +82,7 @@ void radix_sort(int *array, size_t size)
 	int maximum = getMaximum(array, (int)size);
 	int exp = 1;
 
-	if (size < 2)
+	if (size < 2 || !array)
 		return;
 
 	for (; maximum / exp > 0; exp *= 10)
