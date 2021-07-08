@@ -88,7 +88,7 @@ print_array(array, size);
 free(sortedArray);
 sortedArray = NULL;
 }
-sortedArray = malloc(sizeof(int) * size);
+sortedArray = malloc(sizof(int) * size);
 for (int rindex = 0; rindex < 10; rindex++)
 {
 for (int aindex = 0; aindex < (int)size; aindex++)
