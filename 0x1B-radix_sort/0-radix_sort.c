@@ -67,6 +67,10 @@ return (maxNum);
 void radix_sort(int *array, size_t size)
 {
 
+    if(size <= 2) {
+        return;
+    }
+
 int *sortedArray = NULL;
 int k = 0;
 int flag = 0;
