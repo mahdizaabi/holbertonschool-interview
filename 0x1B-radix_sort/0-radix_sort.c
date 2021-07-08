@@ -103,4 +103,6 @@ flag = 1;
 }
 }
 }
+free(sortedArray);
+sortedArray = NULL;
 }
