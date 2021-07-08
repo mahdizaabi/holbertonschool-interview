@@ -26,8 +26,7 @@ return (number / r % 10);
  * @number: interger
  * Return: integer, number of digits
  */
-
- int getLength(int number)
+int getLength(int number)
 {
 int count = 0;
 while (number != 0)
@@ -39,10 +38,8 @@ return (count);
 }
 /**
  * get_max - Returns the number of digits of the biggest int in the array.
- *
  * @array: array to seach into.
  * @size: size of the array.
- *
  * Return: the biggest element of the array.
  */
 int get_max(int *array, int size)
@@ -69,15 +66,15 @@ void radix_sort(int *array, size_t size)
 if (array == NULL || size < 2)
 return;
 
-
 int *sortedArray = NULL;
 int k = 0;
 int flag = 0;
 sortedArray = malloc(sizeof(int) * size);
 if (sortedArray == NULL)
 return;
-
-for (int pos = 0; pos < getLength(get_max(array, size)) + 1; pos++)
+int max = get_max(array, size);
+int length = getLength(max) + 1;
+for (int pos = 0; pos < length; pos++)
 {
 k = 0;
 if (flag != 0)
@@ -89,7 +86,6 @@ array[j] = sortedArray[j];
 print_array(array, size);
 
 }
-
 for (int rindex = 0; rindex < 10; rindex++)
 {
 for (int aindex = 0; aindex < (int)size; aindex++)
