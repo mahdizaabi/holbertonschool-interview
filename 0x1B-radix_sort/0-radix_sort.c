@@ -88,6 +88,8 @@ free(sortedArray);
 sortedArray = NULL;
 }
 sortedArray = malloc(sizeof(int) * size);
+if (sortedArray == NULL)
+return;
 
 for (int rindex = 0; rindex < 10; rindex++)
 {
